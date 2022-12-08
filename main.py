@@ -44,8 +44,8 @@ for sheetname in xlsx_file.sheetnames:
             {
                 "id": dishes_id,
                 "canteen_id": canteen_id,
-                "name": str(row[0].value),
-                "category": str(row[1].value),
+                "name": str(row[0].value).replace('\"', ''),
+                "category": str(row[1].value).replace('\"', ''),
                 "price": float(row[2].value)
             }
         )
