@@ -28,7 +28,15 @@ final_dict = {"canteen_list": [], "dishes": []}
 canteen_id = 0
 
 for sheetname in xlsx_file.sheetnames:
-    final_dict["canteen_list"].append({"id": canteen_id, "name": sheetname, "description": "", "place": "", "photo": []})
+    final_dict["canteen_list"].append(
+        {
+            "id": canteen_id,
+            "name": sheetname,
+            "description": "",
+            "place": "",
+            "photo": []
+        }
+    )
     dishes_id = 0
     for row in xlsx_file[sheetname].iter_rows():
         if row[0].value == "Name":
