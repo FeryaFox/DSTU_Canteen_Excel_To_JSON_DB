@@ -20,7 +20,6 @@ while True:
         break
 
 chose_file = file_list[int(chose_file_id)-1]
-print(chose_file)
 
 xlsx_file = load_workbook(chose_file)
 
@@ -41,7 +40,6 @@ for sheetname in xlsx_file.sheetnames:
     for row in xlsx_file[sheetname].iter_rows():
         if row[0].value == "Name":
             continue
-        print(row[0].value)
         final_dict["dishes"].append(
             {
                 "id": dishes_id,
@@ -53,8 +51,6 @@ for sheetname in xlsx_file.sheetnames:
         )
         dishes_id += 1
     canteen_id += 1
-
-print(final_dict)
 
 with open("canteen_data.json", "w", encoding='utf-8') as f:
     json.dump(final_dict, f, ensure_ascii=False, indent=4)
