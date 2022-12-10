@@ -254,3 +254,4 @@ cython_debug/
 canteen_data.json
 *.XLSX
 *.xlsx
+.idea/

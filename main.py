@@ -25,6 +25,7 @@ xlsx_file = load_workbook(chose_file)
 
 final_dict = {"canteen_list": [], "dishes": []}
 canteen_id = 0
+dishes_id = 0
 
 for sheetname in xlsx_file.sheetnames:
     final_dict["canteen_list"].append(
@@ -36,7 +37,7 @@ for sheetname in xlsx_file.sheetnames:
             "photo": []
         }
     )
-    dishes_id = 0
+
     for row in xlsx_file[sheetname].iter_rows():
         if row[0].value == "Name":
             continue
